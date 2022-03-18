@@ -337,7 +337,7 @@ class TLogger: NSObject, UINavigationControllerDelegate, MFMailComposeViewContro
 
 
 /// Shorthand
-#if DEBUG
+//#if DEBUG
 public func LOG(_ message: String, _ level: LogLevel = .debug, remoteLogger: RemoteLogger? = nil) {
     TLogger.sharedInstance.log(message: message, category: .none)
     if let remoteLogger = remoteLogger {
@@ -356,18 +356,18 @@ public func WLOG(_ message: Any) {
 public func ELOG(_ message: Any) {
     TLogger.sharedInstance.log(message: message, category: .error)
 }
-
-#else
-public func LOG(_ message: String, _ level: LogLevel = .debug, remoteLogger: RemoteLogger? = nil) {
-    if let remoteLogger = remoteLogger {
-        remoteLogger.log(message, level: level)
-    }
-}
-public func LOG(_ message: String, _ category: LogCategory = .none) {}
-public func LOG(_ message: Any, category: LogCategory = .none) {}
-public func WLOG(_ message: Any) {}
-public func ELOG(_ message: Any) {}
-#endif
+//
+//#else
+//public func LOG(_ message: String, _ level: LogLevel = .debug, remoteLogger: RemoteLogger? = nil) {
+//    if let remoteLogger = remoteLogger {
+//        remoteLogger.log(message, level: level)
+//    }
+//}
+//public func LOG(_ message: String, _ category: LogCategory = .none) {}
+//public func LOG(_ message: Any, category: LogCategory = .none) {}
+//public func WLOG(_ message: Any) {}
+//public func ELOG(_ message: Any) {}
+//#endif
 
 fileprivate extension String {
     /// Used to localize string
