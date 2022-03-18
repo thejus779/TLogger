@@ -30,13 +30,13 @@ public enum LogCategory: String {
     case tracking  = "🏷 "
 }
 
-class TLogger: NSObject, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
+public class TLogger: NSObject, UINavigationControllerDelegate, MFMailComposeViewControllerDelegate {
 
     var loggerViewDisplayed: Bool = false
     var logMessages: [String] = Array()
     
     // MARK: Singleton
-    static let sharedInstance: TLogger = TLogger()
+    public static let sharedInstance: TLogger = TLogger()
 
 
     /// Get the log content
@@ -285,7 +285,7 @@ class TLogger: NSObject, UINavigationControllerDelegate, MFMailComposeViewContro
         }
     }
 
-    internal func mailComposeController(_ controller: MFMailComposeViewController,
+    public func mailComposeController(_ controller: MFMailComposeViewController,
                                         didFinishWith result: MFMailComposeResult,
                                         error: Error?) {
 
